@@ -8,18 +8,19 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class StartMenu extends BasicGameState {
 
-	Image startUnpressed, title, customize, about, highScore;
+	Button startUnpressed, customize, about, highScore;
+	Image title;
 	
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1)
 			throws SlickException {
 		// TODO Auto-generated method stub
 		
-		startUnpressed = new Image("img/Start_Unpressed.png");
+		startUnpressed = new Button("img/Start_Unpressed");
 		title = new Image("img/40itd-pacman_title.png");
-		customize = new Image("img/Customize_Unpressed.png");
-		about = new Image("img/About_Unpressed.png");
-		highScore = new Image("img/High Scores_Unpressed.png");
+		customize = new Button("img/Customize_Unpressed");
+		about = new Button("img/About_Unpressed");
+		highScore = new Button("img/High Scores_Unpressed");
 		
 	}
 
@@ -28,11 +29,11 @@ public class StartMenu extends BasicGameState {
 			throws SlickException {
 		// TODO Auto-generated method stub
 		g.drawImage(title, 0, 10);
-		g.drawImage(startUnpressed, 119, 175);
-		g.drawImage(customize, 119, 250);
-		g.drawImage(highScore, 119, 325);
-		g.drawImage(about, 119, 400);
-		
+//		g.draw(startUnpressed, 119, 175);
+//		g.drawe(customize, 119, 250);
+//		g.drawImage(highScore, 119, 325);
+//		g.drawImage(about, 119, 400);
+//		
 		
 	}
 
