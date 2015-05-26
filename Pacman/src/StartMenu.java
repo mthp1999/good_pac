@@ -17,11 +17,11 @@ public class StartMenu extends BasicGameState {
 			throws SlickException {
 		// TODO Auto-generated method stub
 		
-		startUnpressed = new Button("Start");
+		startUnpressed = new Button("img/Start");
 		title = new Image("img/40itd-pacman_title.png");
-		customize = new Button("Customize");
-		about = new Button("About");
-		highScore = new Button("img/High Scores_Unpressed.png");
+		customize = new Button("img/Customize");
+		about = new Button("img/About");
+		highScore = new Button("img/High Scores");
 		
 	}
 
@@ -44,17 +44,20 @@ public class StartMenu extends BasicGameState {
 
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta)
-			throws SlickException {
-		// TODO Auto-generated method stub
-		if (container.getInput().isMouseButtonDown(0) && container.getInput().getMouseX() > 118 && container.getInput().getMouseX() < 395 && container.getInput().getMouseY() > 174 && container.getInput().getMouseY() < 226) {
-			System.out.println("yay");
-			game.enterState(1);
+			throws SlickException {	
+		
+		if(startUnpressed.update(container.getInput())) {
+			
 		}
-		if (container.getInput().isMouseButtonDown(0) && container.getInput().getMouseX() > 118 && container.getInput().getMouseX() < 395 && container.getInput().getMouseY() > 399 && container.getInput().getMouseY() < 451) {
-			System.out.println("yay");
-			game.enterState(2);
+		if(customize.update(container.getInput())) {
+			
 		}
-	
+		if(highScore.update(container.getInput())) {
+			
+		}
+		if(about.update(container.getInput())) {
+			
+		}
 	}
 
 	@Override
