@@ -10,6 +10,7 @@ public class StartMenu extends BasicGameState {
 
 	Button startUnpressed, customize, about, highScore;
 	Image title;
+	public static Button home;
 	
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1)
@@ -29,6 +30,10 @@ public class StartMenu extends BasicGameState {
 			throws SlickException {
 		// TODO Auto-generated method stub
 		g.drawImage(title, 0, 10);
+		startUnpressed.draw(g, 119, 175);
+		customize.draw(g, 119, 250);
+		highScore.draw(g, 119, 325);
+		about.draw(g, 119, 400);
 //		g.draw(startUnpressed, 119, 175);
 //		g.drawe(customize, 119, 250);
 //		g.drawImage(highScore, 119, 325);
