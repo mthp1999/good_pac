@@ -10,18 +10,18 @@ public class StartMenu extends BasicGameState {
 
 	Button startUnpressed, customize, about, highScore;
 	Image title;
-	public static Button home;
+	//public static Button startUnpressed, customize, about, highScore;
 	
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1)
 			throws SlickException {
 		// TODO Auto-generated method stub
 		
-		startUnpressed = new Button("img/Start_Unpressed");
+		startUnpressed = new Button("Start");
 		title = new Image("img/40itd-pacman_title.png");
-		customize = new Button("img/Customize_Unpressed");
-		about = new Button("img/About_Unpressed");
-		highScore = new Button("img/High Scores_Unpressed");
+		customize = new Button("Customize");
+		about = new Button("About");
+		highScore = new Button("img/High Scores_Unpressed.png");
 		
 	}
 

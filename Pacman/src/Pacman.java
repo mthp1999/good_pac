@@ -1,3 +1,4 @@
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -8,14 +9,13 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Pacman extends BasicGameState {
 	
-	Image pac;
+	SpriteSheet pac;
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		
-		
+		pac = new SpriteSheet();
 	}
 
 	@Override
