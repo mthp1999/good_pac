@@ -9,13 +9,12 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Pacman extends BasicGameState {
 	
-	SpriteSheet pac;
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		pac = new SpriteSheet();
+		
 	}
 
 	@Override
