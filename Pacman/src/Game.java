@@ -1,11 +1,14 @@
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.state.StateBasedGame;
 
 
 public class Game extends StateBasedGame{
 	
+	public static TrueTypeFont f1;
+
 	public Game(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
