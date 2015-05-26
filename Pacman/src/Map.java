@@ -16,7 +16,7 @@ public class Map extends BasicGameState{
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		i = new Image("img/pacman_layout.png");
+		i = new Image("img/pacman_layout1.png");
 	}
 
 	@Override
