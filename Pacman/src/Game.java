@@ -36,6 +36,7 @@ public class Game extends StateBasedGame{
 		addState(new Map());
 		addState(new About());
 		addState(new Pacman());
+		addState(new GameOver());
 	}
 	
 	

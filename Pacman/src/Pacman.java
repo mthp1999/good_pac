@@ -23,9 +23,9 @@ public class Pacman extends BasicGameState {
 		pacmanY = 285;
 		pacman = new Image("img/Pacman.png");
 		pacmanLives = 3;
-		life1 = new Image("img/Pacman.png");
-		life2 = new Image("img/Pacman.png");
-		life3 = new Image("img/Pacman.png");
+		life1 = new Image("img/Pacman_Small.png");
+		life2 = new Image("img/Pacman_Small.png");
+		life3 = new Image("img/Pacman_Small.png");
 		i = new Image("img/New Map.png");
 		ghost1 = new Image("img/ghostRed.png");
 		ghost2 = new Image("img/ghostLightBlue.png");
@@ -38,21 +38,21 @@ public class Pacman extends BasicGameState {
 		ghost3X = 30;
 		ghost3Y = 30;
 		ghost4X = 40;
-		ghost4Y = 50;
+		ghost4Y = 40;
 	}
 
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		g.drawImage(i, 10, 10);
+		g.drawImage(i, 0, 0);
 		g.drawImage(pacman, pacmanX, pacmanY);
 		if(pacmanLives > 0) {
-			g.drawImage(life1, 490, 0);
+			g.drawImage(life1, 500, 0);
 			if(pacmanLives > 1) {
-				g.drawImage(life2, 490, 16);
+				g.drawImage(life2, 500, 16);
 				if(pacmanLives > 2) {
-					g.drawImage(life3, 490, 32);
+					g.drawImage(life3, 500, 32);
 				}
 			}
 		}
@@ -89,6 +89,9 @@ public class Pacman extends BasicGameState {
 			pacmanLives-=1;
 			pacmanX = 250;
 			pacmanY = 285;
+		}
+		if(pacmanLives ==  0) {
+			game.enterState(6);
 		}
 		
 		
