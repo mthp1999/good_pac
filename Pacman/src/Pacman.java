@@ -12,7 +12,7 @@ public class Pacman extends BasicGameState {
 	
 	Image pacman, life1, life2, life3, ghost1, ghost2, ghost3, ghost4;
 	Image i;
-	int pacmanX, pacmanY, pacmanLives, ghost1X, ghost1Y;
+	int pacmanX, pacmanY, pacmanLives, ghost1X, ghost1Y, ghost2X, ghost2Y, ghost3X, ghost3Y, ghost4X, ghost4Y;
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
@@ -27,8 +27,17 @@ public class Pacman extends BasicGameState {
 		life3 = new Image("img/Pacman.png");
 		i = new Image("img/New Map.png");
 		ghost1 = new Image("img/ghostRed.png");
+		ghost2 = new Image("img/ghostLightBlue.png");
+		ghost3 = new Image("img/ghostPink.png");
+		ghost4 = new Image("img/ghostYellow.png");
 		ghost1X = 10;
 		ghost1Y = 10;
+		ghost2X = 20;
+		ghost2Y = 20;
+		ghost3X = 30;
+		ghost3Y = 30;
+		ghost4X = 40;
+		ghost4Y = 50;
 	}
 
 	@Override
@@ -47,6 +56,9 @@ public class Pacman extends BasicGameState {
 			}
 		}
 		g.drawImage(ghost1, ghost1X, ghost1Y);
+		g.drawImage(ghost2, ghost2X, ghost2Y);
+		g.drawImage(ghost3, ghost3X, ghost3Y);
+		g.drawImage(ghost4, ghost4X, ghost4Y);
 		
 	}
 
@@ -66,24 +78,17 @@ public class Pacman extends BasicGameState {
 		if(container.getInput().isKeyDown(Input.KEY_DOWN)){
 			pacmanY += 1;
 		}
-		Rectangle r = new Rectangle(ghost1X,ghost1Y, 14, 14);
-	    Rectangle p = new Rectangle(pacmanX, pacmanY, 12, 12);
-		if(r.intersects(p)) {
+	    
+		Rectangle p = new Rectangle(pacmanX, pacmanY, 12, 12);
+		Rectangle g1 = new Rectangle(ghost1X,ghost1Y, 14, 14);
+	    Rectangle g2 = new Rectangle(ghost2X,ghost2Y, 14, 14);
+	    Rectangle g3 = new Rectangle(ghost3X,ghost3Y, 14, 14);
+	    Rectangle g4 = new Rectangle(ghost4X,ghost4Y, 14, 14);
+		if(p.intersects(g1) || p.intersects(g2) || p.intersects(g3) || p.intersects(g4)) {
 			pacmanLives-=1;
 			pacmanX = 250;
 			pacmanY = 285;
 		}
-		
-	    
-		/*if(pacman.Intersects(ghost2)) {
-			pacmanLives-=1;
-		}
-		if(pacman.Intersects(ghost3)) {
-			pacmanLives-=1;
-		}
-		if(pacman.Intersects(ghost4)) {
-			pacmanLives-=1;
-		}*/
 		
 		
 	}
@@ -93,6 +98,5 @@ public class Pacman extends BasicGameState {
 		// TODO Auto-generated method stub
 		return 3;
 	}
-
+	
 }
->>>>>>> origin/master
