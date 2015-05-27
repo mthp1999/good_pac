@@ -26,7 +26,7 @@ public class Pacman extends BasicGameState {
 		life1 = new Image("img/Pacman.png");
 		life2 = new Image("img/Pacman.png");
 		life3 = new Image("img/Pacman.png");
-		i = new Image("img/pacman_layout1.png");
+		i = new Image("img/New Map.png");
 		ghost1 = new Image("img/ghostRed.png");
 		ghost1X = 10;
 		ghost1Y = 10;
