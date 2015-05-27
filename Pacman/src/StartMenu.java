@@ -1,7 +1,10 @@
+import java.awt.Font;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -9,6 +12,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class StartMenu extends BasicGameState {
 
 	Button startUnpressed, customize, about, highScore;
+	
 	Image title;
 	//public static Button startUnpressed, customize, about, highScore;
 	
@@ -22,6 +26,7 @@ public class StartMenu extends BasicGameState {
 		customize = new Button("img/Customize");
 		about = new Button("img/About");
 		highScore = new Button("img/High Scores");
+		Game.f1 = new TrueTypeFont(new Font("NewTimesRoman", 0 , 30), false);
 		
 	}
 
