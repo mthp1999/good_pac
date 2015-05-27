@@ -117,6 +117,7 @@ public class Pacman extends BasicGameState {
 			pacmanY = 385;
 		}
 		if(pacmanLives ==  0) {
+			pacmanLives = 3;
 			game.enterState(6);
 		}
 		if(p.intersects(box1Left) || p.intersects(box3Left1) || p.intersects(box3Left2) || p.intersects(box3Left3)) {
