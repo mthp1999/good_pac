@@ -8,6 +8,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Game extends StateBasedGame{
 	
 	public static TrueTypeFont f1;
+	public static Object[] scoreList;
 
 	public Game(String name) {
 		super(name);
