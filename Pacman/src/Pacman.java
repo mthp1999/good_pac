@@ -1,4 +1,3 @@
-import org.newdawn.slick.Animation;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -23,9 +22,9 @@ public class Pacman extends BasicGameState {
 		pacmanY = 285;
 		pacman = new Image("img/Pacman.png");
 		pacmanLives = 3;
-		life1 = new Image("img/Pacman_Small.png");
-		life2 = new Image("img/Pacman_Small.png");
-		life3 = new Image("img/Pacman_Small.png");
+		life1 = new Image("img/Pacman.png");
+		life2 = new Image("img/Pacman.png");
+		life3 = new Image("img/Pacman.png");
 		i = new Image("img/New Map.png");
 		ghost1 = new Image("img/ghostRed.png");
 		ghost1X = 10;
@@ -36,14 +35,14 @@ public class Pacman extends BasicGameState {
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		g.drawImage(i, 0, 0);
+		g.drawImage(i, 10, 10);
 		g.drawImage(pacman, pacmanX, pacmanY);
 		if(pacmanLives > 0) {
-			g.drawImage(life1, 500, 0);
+			g.drawImage(life1, 490, 0);
 			if(pacmanLives > 1) {
-				g.drawImage(life2, 500, 16);
+				g.drawImage(life2, 490, 16);
 				if(pacmanLives > 2) {
-					g.drawImage(life3, 500, 32);
+					g.drawImage(life3, 490, 32);
 				}
 			}
 		}
@@ -68,7 +67,7 @@ public class Pacman extends BasicGameState {
 			pacmanY += 1;
 		}
 		Rectangle r = new Rectangle(ghost1X,ghost1Y, 14, 14);
-	    Rectangle p = new Rectangle(pacmanX, pacmanY, 30, 32);
+	    Rectangle p = new Rectangle(pacmanX, pacmanY, 12, 12);
 		if(r.intersects(p)) {
 			pacmanLives-=1;
 			pacmanX = 250;
@@ -96,3 +95,4 @@ public class Pacman extends BasicGameState {
 	}
 
 }
+>>>>>>> origin/master
