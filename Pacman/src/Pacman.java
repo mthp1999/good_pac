@@ -14,13 +14,14 @@ public class Pacman extends BasicGameState {
 	Image pacman, life1, life2, life3, ghost1, ghost2, ghost3, ghost4;
 	Image i;
 	int pacmanX, pacmanY, pacmanLives, ghost1X, ghost1Y, ghost2X, ghost2Y, ghost3X, ghost3Y, ghost4X, ghost4Y;
+	boolean wallsLeft, wallsRight, wallsTop, wallsBottom;
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		pacmanX = 250;
-		pacmanY = 285;
+		pacmanX = 240;
+		pacmanY = 385;
 		pacman = new Image("img/Pacman.png");
 		pacmanLives = 3;
 		life1 = new Image("img/Pacman_Small.png");
@@ -39,6 +40,10 @@ public class Pacman extends BasicGameState {
 		ghost3Y = 30;
 		ghost4X = 40;
 		ghost4Y = 40;
+		wallsLeft = false;
+		wallsRight = false;
+		wallsTop = false;
+		wallsBottom = false;
 	}
 
 	@Override
@@ -67,16 +72,16 @@ public class Pacman extends BasicGameState {
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		if(container.getInput().isKeyDown(Input.KEY_RIGHT)){
+		if(container.getInput().isKeyDown(Input.KEY_RIGHT) && pacmanX < 468 && wallsLeft == false){
 			pacmanX += 1;
 		}
-		if(container.getInput().isKeyDown(Input.KEY_LEFT)){
+		if(container.getInput().isKeyDown(Input.KEY_LEFT) && pacmanX > 0 && wallsRight == false){
 			pacmanX -= 1;
 		}
-		if(container.getInput().isKeyDown(Input.KEY_UP)){
+		if(container.getInput().isKeyDown(Input.KEY_UP) && pacmanY > 0 && wallsBottom == false){
 			pacmanY -= 1;
 		}
-		if(container.getInput().isKeyDown(Input.KEY_DOWN)){
+		if(container.getInput().isKeyDown(Input.KEY_DOWN) && pacmanY < 483 && wallsTop == false){
 			pacmanY += 1;
 		}
 	    
@@ -85,17 +90,39 @@ public class Pacman extends BasicGameState {
 	    Rectangle g2 = new Rectangle(ghost2X,ghost2Y, 14, 14);
 	    Rectangle g3 = new Rectangle(ghost3X,ghost3Y, 14, 14);
 	    Rectangle g4 = new Rectangle(ghost4X,ghost4Y, 14, 14);
+	    Rectangle box1Left = new Rectangle(45, 45, 1, 105);
+	    Rectangle box1Right = new Rectangle(155, 45, 1, 105);
+	    Rectangle box1Top = new Rectangle(45, 45, 110, 1);
+	    Rectangle box1Bottom = new Rectangle(45, 150, 110, 1);
 		if(p.intersects(g1) || p.intersects(g2) || p.intersects(g3) || p.intersects(g4)) {
 			pacmanLives-=1;
-			pacmanX = 250;
-			pacmanY = 285;
+			pacmanX = 240;
+			pacmanY = 385;
 		}
 		if(pacmanLives ==  0) {
 			pacmanLives = 3;
 			game.enterState(6);
 		}
-		
-		
+		if(p.intersects(box1Left)) {
+			wallsLeft = true;
+		} else {
+			wallsLeft = false;
+		}
+		if(p.intersects(box1Right)) {
+			wallsRight = true;
+		} else {
+			wallsRight = false;
+		}
+		if(p.intersects(box1Top)) {
+			wallsTop = true;
+		} else {
+			wallsTop = false;
+		}
+		if(p.intersects(box1Bottom)) {
+			wallsBottom = true;
+		} else {
+			wallsBottom = false;
+		}
 	}
 
 	@Override
