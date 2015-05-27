@@ -41,7 +41,7 @@ public class HighScore extends BasicGameState{
 			g.drawString((i + 1) + ". ", 80, 80 + i * 30);
 			//this is drawing the name on the left side of the box and the score on the right
 			g.drawString(Game.scoreList[i].name, 110, 80 + i * 30);
-			//woah that is one hell of a line                            This part is to make sure that the last number is allways in the same place not the first
+			//woah that is one hell of a line                            This part is to make sure that the last number is always in the same place not the first
 			g.drawString(String .valueOf(Game.scoreList[i].score), 370 - g.getFont().getWidth(String.valueOf(Game.scoreList[i].score)), 80 + 30 * i);
 		}
 	}
