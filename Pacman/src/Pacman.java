@@ -92,8 +92,25 @@ public class Pacman extends BasicGameState {
 	    Rectangle g4 = new Rectangle(ghost4X,ghost4Y, 14, 14);
 	    Rectangle box1Left = new Rectangle(45, 45, 1, 105);
 	    Rectangle box1Right = new Rectangle(155, 45, 1, 105);
-	    Rectangle box1Top = new Rectangle(45, 45, 110, 1);
+	    Rectangle box1Top = new Rectangle(45, 40, 110, 1);
 	    Rectangle box1Bottom = new Rectangle(45, 150, 110, 1);
+	    Rectangle box2Top1 = new Rectangle(0, 270, 42, 1);
+	    Rectangle box2Right1 = new Rectangle(42, 290, 1, 185);
+	    Rectangle box2Top2 = new Rectangle(42, 455, 162, 1);
+	    Rectangle box2Right2 = new Rectangle(204, 475, 1, 37);
+	    Rectangle box3Top1 = new Rectangle (235, 124, 40, 1);
+	    Rectangle box3Top2 = new Rectangle(169, 224, 66, 1);
+	    Rectangle box3Top3 = new Rectangle(275, 224, 70, 1);
+	    Rectangle box3Right1 = new Rectangle(275, 144, 1, 100);
+	    Rectangle box3Right2 = new Rectangle(345, 244, 1, 41);
+	    Rectangle box3Right3 = new Rectangle(275, 285, 1, 87);
+	    Rectangle box3Left1 = new Rectangle(235, 139, 1, 100);
+	    Rectangle box3Left2 = new Rectangle(169, 239, 1, 41);
+	    Rectangle box3Left3 = new Rectangle(235, 280, 1, 87);
+	    Rectangle box3Bottom1 = new Rectangle(169, 285, 40, 1);
+	    Rectangle box3Bottom2 = new Rectangle(235, 372, 66, 1);
+	    Rectangle box3Bottom3 = new Rectangle(275, 285, 70, 1);
+	    
 		if(p.intersects(g1) || p.intersects(g2) || p.intersects(g3) || p.intersects(g4)) {
 			pacmanLives-=1;
 			pacmanX = 240;
@@ -102,26 +119,28 @@ public class Pacman extends BasicGameState {
 		if(pacmanLives ==  0) {
 			game.enterState(6);
 		}
-		if(p.intersects(box1Left)) {
+		if(p.intersects(box1Left) || p.intersects(box3Left1) || p.intersects(box3Left2) || p.intersects(box3Left3)) {
 			wallsLeft = true;
 		} else {
 			wallsLeft = false;
 		}
-		if(p.intersects(box1Right)) {
+		if(p.intersects(box1Right) || p.intersects(box2Right1) || p.intersects(box2Right2) || p.intersects(box3Right1) || p.intersects(box3Right2) || p.intersects(box3Right3)) {
 			wallsRight = true;
 		} else {
 			wallsRight = false;
 		}
-		if(p.intersects(box1Top)) {
+		if(p.intersects(box1Top) || p.intersects(box2Top1) || p.intersects(box2Top2) || p.intersects(box3Top1) || p.intersects(box3Top2) || p.intersects(box3Top3)) {
 			wallsTop = true;
 		} else {
 			wallsTop = false;
 		}
-		if(p.intersects(box1Bottom)) {
+		if(p.intersects(box1Bottom) || p.intersects(box3Bottom1) || p.intersects(box3Bottom2) || p.intersects(box3Bottom3)) {
 			wallsBottom = true;
 		} else {
 			wallsBottom = false;
 		}
+		
+		
 	}
 
 	@Override
