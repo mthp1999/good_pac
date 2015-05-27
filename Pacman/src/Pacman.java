@@ -91,6 +91,7 @@ public class Pacman extends BasicGameState {
 			pacmanY = 285;
 		}
 		if(pacmanLives ==  0) {
+			pacmanLives = 3;
 			game.enterState(6);
 		}
 		
