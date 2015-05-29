@@ -22,7 +22,7 @@ public class Pacman extends BasicGameState {
 		// TODO Auto-generated method stub
 		pacmanX = 240;
 		pacmanY = 385;
-		pacman = new Image("img/Pacman.png");
+		pacman = new Image(Customize.colour);
 		pacmanLives = 3;
 		life1 = new Image("img/Pacman_Small.png");
 		life2 = new Image("img/Pacman_Small.png");
