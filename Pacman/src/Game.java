@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
@@ -16,10 +18,13 @@ public class Game extends StateBasedGame{
 	}
 
 	public static void main(String argv[]) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("What fps do you want?");
+		int x = in.nextInt();
 		try {
 			AppGameContainer pacman = new AppGameContainer(new Game("Pacman"));
 			pacman.setDisplayMode(512, 512, false);
-			//pacman.setTargetFrameRate(68);
+			pacman.setTargetFrameRate(x - 1);
 			pacman.start();
 			
 		} catch (SlickException e) {
