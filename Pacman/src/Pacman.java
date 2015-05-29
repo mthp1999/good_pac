@@ -98,18 +98,22 @@ public class Pacman extends BasicGameState {
 	    Rectangle box2Right1 = new Rectangle(42, 290, 1, 185);
 	    Rectangle box2Top2 = new Rectangle(42, 455, 162, 1);
 	    Rectangle box2Right2 = new Rectangle(204, 475, 1, 37);
-	    Rectangle box3Top1 = new Rectangle (235, 124, 40, 1);
+	    Rectangle box3Top1 = new Rectangle (215, 144, 60, 1);
 	    Rectangle box3Top2 = new Rectangle(169, 224, 66, 1);
 	    Rectangle box3Top3 = new Rectangle(275, 224, 70, 1);
 	    Rectangle box3Right1 = new Rectangle(275, 144, 1, 100);
 	    Rectangle box3Right2 = new Rectangle(345, 244, 1, 41);
 	    Rectangle box3Right3 = new Rectangle(275, 285, 1, 87);
-	    Rectangle box3Left1 = new Rectangle(235, 139, 1, 100);
-	    Rectangle box3Left2 = new Rectangle(169, 239, 1, 41);
-	    Rectangle box3Left3 = new Rectangle(235, 280, 1, 87);
-	    Rectangle box3Bottom1 = new Rectangle(169, 285, 40, 1);
-	    Rectangle box3Bottom2 = new Rectangle(235, 372, 66, 1);
+	    Rectangle box3Left1 = new Rectangle(215, 139, 1, 100);
+	    Rectangle box3Left2 = new Rectangle(149, 239, 1, 41);
+	    Rectangle box3Left3 = new Rectangle(215, 285, 1, 87);
+	    Rectangle box3Bottom1 = new Rectangle(149, 285, 60, 1);
+	    Rectangle box3Bottom2 = new Rectangle(215, 372, 66, 1);
 	    Rectangle box3Bottom3 = new Rectangle(275, 285, 70, 1);
+	    Rectangle box4Top = new Rectangle(409, 190, 39, 1);
+	    Rectangle box4Left = new Rectangle(409, 190, 1, 227);
+	    Rectangle box4Right = new Rectangle(468, 210, 1, 207);
+	    Rectangle box4Bottom = new Rectangle(429, 417, 39, 1);
 	    
 		if(p.intersects(g1) || p.intersects(g2) || p.intersects(g3) || p.intersects(g4)) {
 			pacmanLives-=1;
@@ -120,22 +124,22 @@ public class Pacman extends BasicGameState {
 			pacmanLives = 3;
 			game.enterState(6);
 		}
-		if(p.intersects(box1Left) || p.intersects(box3Left1) || p.intersects(box3Left2) || p.intersects(box3Left3)) {
+		if(p.intersects(box1Left) || p.intersects(box3Left1) || p.intersects(box3Left2) || p.intersects(box3Left3) || p.intersects(box4Left)) {
 			wallsLeft = true;
 		} else {
 			wallsLeft = false;
 		}
-		if(p.intersects(box1Right) || p.intersects(box2Right1) || p.intersects(box2Right2) || p.intersects(box3Right1) || p.intersects(box3Right2) || p.intersects(box3Right3)) {
+		if(p.intersects(box1Right) || p.intersects(box2Right1) || p.intersects(box2Right2) || p.intersects(box3Right1) || p.intersects(box3Right2) || p.intersects(box3Right3) || p.intersects(box4Right)) {
 			wallsRight = true;
 		} else {
 			wallsRight = false;
 		}
-		if(p.intersects(box1Top) || p.intersects(box2Top1) || p.intersects(box2Top2) || p.intersects(box3Top1) || p.intersects(box3Top2) || p.intersects(box3Top3)) {
+		if(p.intersects(box1Top) || p.intersects(box2Top1) || p.intersects(box2Top2) || p.intersects(box3Top1) || p.intersects(box3Top2) || p.intersects(box3Top3) || p.intersects(box4Top)) {
 			wallsTop = true;
 		} else {
 			wallsTop = false;
 		}
-		if(p.intersects(box1Bottom) || p.intersects(box3Bottom1) || p.intersects(box3Bottom2) || p.intersects(box3Bottom3)) {
+		if(p.intersects(box1Bottom) || p.intersects(box3Bottom1) || p.intersects(box3Bottom2) || p.intersects(box3Bottom3) || p.intersects(box4Bottom)) {
 			wallsBottom = true;
 		} else {
 			wallsBottom = false;
