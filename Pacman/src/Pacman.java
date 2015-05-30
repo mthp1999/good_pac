@@ -98,10 +98,10 @@ public class Pacman extends BasicGameState {
 	    Rectangle box2Right1 = new Rectangle(42, 290, 1, 185);
 	    Rectangle box2Top2 = new Rectangle(42, 455, 162, 1);
 	    Rectangle box2Right2 = new Rectangle(204, 475, 1, 37);
-	    Rectangle box3Top1 = new Rectangle (215, 144, 60, 1);
+	    Rectangle box3Top1 = new Rectangle (215, 124, 60, 1);
 	    Rectangle box3Top2 = new Rectangle(164, 225, 66, 1);
 	    Rectangle box3Top3 = new Rectangle(275, 224, 70, 1);
-	    Rectangle box3Right1 = new Rectangle(275, 144, 1, 100);
+	    Rectangle box3Right1 = new Rectangle(275, 124, 1, 120);
 	    Rectangle box3Right2 = new Rectangle(345, 244, 1, 41);
 	    Rectangle box3Right3 = new Rectangle(275, 285, 1, 87);
 	    Rectangle box3Left1 = new Rectangle(215, 139, 1, 100);
