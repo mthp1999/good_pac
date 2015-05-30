@@ -36,7 +36,7 @@ public class Food extends BasicGameState{
 	@Override
 	public int getID() {
 		// TODO Auto-generated method stub
-		return 7;
+		return 8;
 	}
 	
 
