@@ -48,6 +48,7 @@ public class Game extends StateBasedGame{
 		addState(new GameOver());
 		addState(new Customize());
 		addState(new HighScore());
+		addState(new Food());
 	}
 	
 	
