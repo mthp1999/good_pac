@@ -48,7 +48,11 @@ public class Game extends StateBasedGame{
 		addState(new GameOver());
 		addState(new Customize());
 		addState(new HighScore());
+<<<<<<< HEAD
 		addState(new Food());
+=======
+		addState(new timer());
+>>>>>>> origin/master
 	}
 	
 	
