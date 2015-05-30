@@ -20,7 +20,7 @@ public class Food extends BasicGameState{
 			throws SlickException {
 		// TODO Auto-generated method stub
 		g.drawOval(50, 50, 10, 10);
-		g.setColor
+		g.setColor(color);
 		
 	}
 
