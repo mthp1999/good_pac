@@ -26,10 +26,10 @@ public class Customize extends BasicGameState{
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		green.draw(g, 100, 100);
-		purple.draw(g,  100, 200);
-		orange.draw(g, 100, 300);
-		yellow.draw(g, 100, 400);
+		green.draw(g, 125, 100);
+		purple.draw(g,  125, 200);
+		orange.draw(g, 125, 300);
+		yellow.draw(g, 125, 400);
 	}
 
 	@Override
