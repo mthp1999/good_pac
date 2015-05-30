@@ -71,7 +71,7 @@ public class Pacman extends BasicGameState {
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
-		pacman = new Image(Customize.colour);
+		pacman = new Image(Customize.colour);//controls for up, down, left, and right
 		if(container.getInput().isKeyDown(Input.KEY_RIGHT) && pacmanX < 482 && wallsLeft == false){
 			pacmanX += 1;
 		}
@@ -84,62 +84,39 @@ public class Pacman extends BasicGameState {
 		if(container.getInput().isKeyDown(Input.KEY_DOWN) && pacmanY < 483 && wallsTop == false){
 			pacmanY += 1;
 		}
-	    
-		Rectangle p = new Rectangle(pacmanX, pacmanY, 12, 12);
+		
+		Rectangle p = new Rectangle(pacmanX, pacmanY, 12, 12);//Adding hitboxes to pacman and the 4 ghosts
 		Rectangle g1 = new Rectangle(ghost1X,ghost1Y, 14, 14);
 	    Rectangle g2 = new Rectangle(ghost2X,ghost2Y, 14, 14);
 	    Rectangle g3 = new Rectangle(ghost3X,ghost3Y, 14, 14);
 	    Rectangle g4 = new Rectangle(ghost4X,ghost4Y, 14, 14);
-	    Rectangle box1Left = new Rectangle(43, 45, 1, 105);
-	    Rectangle box1Right = new Rectangle(155, 45, 1, 105);
-	    Rectangle box1Top = new Rectangle(43, 40, 110, 1);
-	    Rectangle box1Bottom = new Rectangle(45, 150, 110, 1);
-	    Rectangle box2Top1 = new Rectangle(0, 270, 42, 1);
-	    Rectangle box2Right1 = new Rectangle(42, 290, 1, 185);
-	    Rectangle box2Top2 = new Rectangle(42, 455, 162, 1);
-	    Rectangle box2Right2 = new Rectangle(204, 475, 1, 37);
-	    Rectangle box3Top1 = new Rectangle (215, 124, 60, 1);
-	    Rectangle box3Top2 = new Rectangle(164, 225, 66, 1);
-	    Rectangle box3Top3 = new Rectangle(275, 224, 70, 1);
-	    Rectangle box3Right1 = new Rectangle(275, 124, 1, 120);
-	    Rectangle box3Right2 = new Rectangle(345, 244, 1, 41);
-	    Rectangle box3Right3 = new Rectangle(275, 285, 1, 87);
-	    Rectangle box3Left1 = new Rectangle(215, 139, 1, 100);
-	    Rectangle box3Left2 = new Rectangle(149, 239, 1, 41);
-	    Rectangle box3Left3 = new Rectangle(215, 285, 1, 87);
-	    Rectangle box3Bottom1 = new Rectangle(149, 285, 60, 1);
-	    Rectangle box3Bottom2 = new Rectangle(219, 372, 55, 1);
-	    Rectangle box3Bottom3 = new Rectangle(275, 285, 70, 1);
-	    Rectangle box4Top = new Rectangle(412, 190, 55, 1);
-	    Rectangle box4Left = new Rectangle(409, 193, 1, 224);
-	    Rectangle box4Right = new Rectangle(468, 193, 1, 224);
-	    Rectangle box4Bottom = new Rectangle(412, 417, 56, 1);
 	    
-		if(p.intersects(g1) || p.intersects(g2) || p.intersects(g3) || p.intersects(g4)) {
-			pacmanLives-=1;
+		if(p.intersects(g1) || p.intersects(g2) || p.intersects(g3) || p.intersects(g4)) {//checking hitboxes for ghost to pacman, if they touch - removea lifeand set back to start
 			pacmanX = 240;
 			pacmanY = 385;
+			pacmanLives-=1;
+			game.enterState(7);
 		}
 		if(pacmanLives ==  0) {
 			pacmanLives = 3;
 			game.enterState(6);
 		}
-		if(p.intersects(box1Left) || p.intersects(box3Left1) || p.intersects(box3Left2) || p.intersects(box3Left3) || p.intersects(box4Left)) {
+		if(p.intersects(rectangles.box1Left) || p.intersects(rectangles.box3Left1) || p.intersects(rectangles.box3Left2) || p.intersects(rectangles.box3Left3) || p.intersects(rectangles.box4Left)) {
 			wallsLeft = true;
 		} else {
 			wallsLeft = false;
 		}
-		if(p.intersects(box1Right) || p.intersects(box2Right1) || p.intersects(box2Right2) || p.intersects(box3Right1) || p.intersects(box3Right2) || p.intersects(box3Right3) || p.intersects(box4Right)) {
+		if(p.intersects(rectangles.box1Right) || p.intersects(rectangles.box2Right1) || p.intersects(rectangles.box2Right2) || p.intersects(rectangles.box3Right1) || p.intersects(rectangles.box3Right2) || p.intersects(rectangles.box3Right3) || p.intersects(rectangles.box4Right)) {
 			wallsRight = true;
 		} else {
 			wallsRight = false;
 		}
-		if(p.intersects(box1Top) || p.intersects(box2Top1) || p.intersects(box2Top2) || p.intersects(box3Top1) || p.intersects(box3Top2) || p.intersects(box3Top3) || p.intersects(box4Top)) {
+		if(p.intersects(rectangles.box1Top) || p.intersects(rectangles.box2Top1) || p.intersects(rectangles.box2Top2) || p.intersects(rectangles.box3Top1) || p.intersects(rectangles.box3Top2) || p.intersects(rectangles.box3Top3) || p.intersects(rectangles.box4Top)) {
 			wallsTop = true;
 		} else {
 			wallsTop = false;
 		}
-		if(p.intersects(box1Bottom) || p.intersects(box3Bottom1) || p.intersects(box3Bottom2) || p.intersects(box3Bottom3) || p.intersects(box4Bottom)) {
+		if(p.intersects(rectangles.box1Bottom) || p.intersects(rectangles.box3Bottom1) || p.intersects(rectangles.box3Bottom2) || p.intersects(rectangles.box3Bottom3) || p.intersects(rectangles.box4Bottom)) {
 			wallsBottom = true;
 		} else {
 			wallsBottom = false;
@@ -147,6 +124,7 @@ public class Pacman extends BasicGameState {
 		
 		
 	}
+	
 
 	@Override
 	public int getID() {
