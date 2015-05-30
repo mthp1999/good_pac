@@ -1,21 +1,30 @@
+import java.util.Random;
+
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.ShapeFill;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Circle;
 import org.newdawn.slick.geom.Rectangle;
+import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 
 public class Pacman extends BasicGameState {
 	
-	Image pacman, life1, life2, life3, ghost1, ghost2, ghost3, ghost4;
-	Image i;
+	Image pacman, life1, life2, life3, ghost1, ghost2, ghost3, ghost4, i;
+	Image[] food = new Image[15];
+	int[] foodX = new int [15];
+	int[] foodY = new int [15];
+	int numScore = 0;
+	String score = "Score";
 	int pacmanX, pacmanY, pacmanLives, ghost1X, ghost1Y, ghost2X, ghost2Y, ghost3X, ghost3Y, ghost4X, ghost4Y;
 	boolean wallsLeft, wallsRight, wallsTop, wallsBottom;
+	Random r = new Random();
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
@@ -44,12 +53,17 @@ public class Pacman extends BasicGameState {
 		wallsRight = false;
 		wallsTop = false;
 		wallsBottom = false;
+		food[0] = new Image("img/foodBall.png");
+		foodX[1] = r.nextInt(501);
+		foodY[1] = r.nextInt(501);
+		
 	}
 
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
 		// TODO Auto-generated method stub
+		
 		g.drawImage(i, 0, 0);
 		g.drawImage(pacman, pacmanX, pacmanY);
 		if(pacmanLives > 0) {
@@ -65,8 +79,10 @@ public class Pacman extends BasicGameState {
 		g.drawImage(ghost2, ghost2X, ghost2Y);
 		g.drawImage(ghost3, ghost3X, ghost3Y);
 		g.drawImage(ghost4, ghost4X, ghost4Y);
-		g.drawOval(100, 100, 16, 16);
-		g.setColor(Color.orange);
+		g.drawImage(food[0], /*r.nextInt(501)*/foodX[1], foodY[1]);
+		g.drawRect(60, 61, 96, 89);
+		g.setColor(Color.white);
+		g.drawString(score, 450, 490);
 	}
 
 	@Override
@@ -86,11 +102,13 @@ public class Pacman extends BasicGameState {
 			pacmanY += 1;
 		}
 		
-		Rectangle p = new Rectangle(pacmanX, pacmanY, 12, 12);//Adding hitboxes to pacman and the 4 ghosts
+		score = new Integer(numScore).toString();
+		Rectangle p = new Rectangle(pacmanX, pacmanY, 30, 32);//Adding hitboxes to pacman and the 4 ghosts
 		Rectangle g1 = new Rectangle(ghost1X,ghost1Y, 14, 14);
 	    Rectangle g2 = new Rectangle(ghost2X,ghost2Y, 14, 14);
 	    Rectangle g3 = new Rectangle(ghost3X,ghost3Y, 14, 14);
 	    Rectangle g4 = new Rectangle(ghost4X,ghost4Y, 14, 14);
+	    Rectangle food1 = new Rectangle(foodX[0], foodY[0], 8, 8);
 	    
 		if(p.intersects(g1) || p.intersects(g2) || p.intersects(g3) || p.intersects(g4)) {//checking hitboxes for ghost to pacman, if they touch - removea lifeand set back to start
 			pacmanX = 240;
@@ -101,6 +119,10 @@ public class Pacman extends BasicGameState {
 		if(pacmanLives ==  0) {
 			pacmanLives = 3;
 			game.enterState(6);
+		}
+		if(p.intersects(food1)){
+			numScore += 100;
+			
 		}
 		if(p.intersects(rectangles.box1Left) || p.intersects(rectangles.box3Left1) || p.intersects(rectangles.box3Left2) || p.intersects(rectangles.box3Left3) || p.intersects(rectangles.box4Left)) {
 			wallsLeft = true;
@@ -123,6 +145,12 @@ public class Pacman extends BasicGameState {
 			wallsBottom = false;
 		}
 		
+		
+		
+	}
+	
+	public static int[] foodX(){
+		return null;
 		
 		
 	}

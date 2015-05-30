@@ -21,8 +21,8 @@ public class Game extends StateBasedGame{
 	@SuppressWarnings("resource")
 	public static void main(String argv[]) {
 		Scanner in = new Scanner(System.in);
-		System.out.println("Please enter your name");
-		Score.name = in.nextLine();
+		//System.out.println("Please enter your name");
+		//Score.name = in.nextLine();
 		System.out.println("What fps do you want?");
 		int x = in.nextInt();
 		try {
