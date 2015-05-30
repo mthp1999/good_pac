@@ -1,5 +1,3 @@
-
-
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -46,7 +44,6 @@ public class Pacman extends BasicGameState {
 		wallsRight = false;
 		wallsTop = false;
 		wallsBottom = false;
-		Circle food;
 	}
 
 	@Override
@@ -68,7 +65,7 @@ public class Pacman extends BasicGameState {
 		g.drawImage(ghost2, ghost2X, ghost2Y);
 		g.drawImage(ghost3, ghost3X, ghost3Y);
 		g.drawImage(ghost4, ghost4X, ghost4Y);
-		g.drawOval(21, 21, 16, 16);
+		g.drawOval(100, 100, 16, 16);
 		g.setColor(Color.orange);
 	}
 
