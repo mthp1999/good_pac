@@ -1,3 +1,4 @@
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -20,7 +21,7 @@ public class Food extends BasicGameState{
 			throws SlickException {
 		// TODO Auto-generated method stub
 		g.drawOval(50, 50, 10, 10);
-		g.setColor(white);
+		g.setColor(Color.orange);
 		
 	}
 

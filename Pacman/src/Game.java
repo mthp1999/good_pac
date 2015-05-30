@@ -18,6 +18,7 @@ public class Game extends StateBasedGame{
 		// TODO Auto-generated constructor stub
 	}
 
+	@SuppressWarnings("resource")
 	public static void main(String argv[]) {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Please enter your name");
@@ -36,7 +37,6 @@ public class Game extends StateBasedGame{
 			e.printStackTrace();
 		}
 		
-		
 	}
 
 	@Override
@@ -50,6 +50,7 @@ public class Game extends StateBasedGame{
 		addState(new HighScore());
 		addState(new Food());
 	}
+	
 	
 	
 	
