@@ -22,7 +22,7 @@ public class StartMenu extends BasicGameState {
 		// TODO Auto-generated method stub
 		
 		startUnpressed = new Button("img/Start");
-		title = new Image("img/40itd-pacman_title.png");
+		title = new Image("img/Title.png");
 		customize = new Button("img/Customize");
 		about = new Button("img/About");
 		highScore = new Button("img/High Scores");

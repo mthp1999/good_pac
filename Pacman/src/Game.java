@@ -28,6 +28,7 @@ public class Game extends StateBasedGame{
 			AppGameContainer pacman = new AppGameContainer(new Game("Pacman"));
 			pacman.setDisplayMode(512, 512, false);
 			pacman.setTargetFrameRate(x - 1);
+			pacman.setClearEachFrame(true);
 			pacman.start();
 			
 		} catch (SlickException e) {
