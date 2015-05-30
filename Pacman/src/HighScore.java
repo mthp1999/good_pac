@@ -12,7 +12,7 @@ public class HighScore extends BasicGameState{
 			throws SlickException {
 		// TODO Auto-generated method stub
 	
-		back = new Button("img/Button");
+		back = new Button("img/Back");
 	}
 
 	@Override
@@ -20,9 +20,9 @@ public class HighScore extends BasicGameState{
 			throws SlickException {
 		// TODO Auto-generated method stub
 		Game.f1.drawString(150, 25, "Highscores");
-		g.drawRect(75, 75, 300, 300);
-		back.draw(g, 200, 387);
-		drawScores(g);
+		g.drawRect(75, 75, 350, 350);
+		back.draw(g, 220, 450);
+//		drawScores(g);
 	}
 
 	@Override
@@ -30,18 +30,17 @@ public class HighScore extends BasicGameState{
 			throws SlickException {
 		// TODO Auto-generated method stub
 		if(back.update(container.getInput())){
-				game.enterState(0);
+			game.enterState(0);
 		}
 	}
 	
 	private void drawScores(Graphics g){
-		//the first loop is for going through each element of the list
 		for(int i = 0; i < 10; i++){
 			//draws the numbers for position
-			g.drawString((i + 1) + ". ", 80, 80 + i * 30);
+			g.drawString((i + 1) + ") ", 80, 80 + i * 30);
 			//this is drawing the name on the left side of the box and the score on the right
-			g.drawString(Game.scoreList[i].name, 110, 80 + i * 30);
-			g.drawString(String .valueOf(Game.scoreList[i].score), 370 - g.getFont().getWidth(String.valueOf(Game.scoreList[i].score)), 80 + 30 * i);
+			g.drawString(Game.scoreList[i].Pacman, 110, 80 + i * 30);
+			g.drawString(String .valueOf(Game.scoreList[i].Score), 370 - g.getFont().getWidth(String.valueOf(Game.scoreList[i].Score)), 80 + 30 * i);
 		}
 	}
 	

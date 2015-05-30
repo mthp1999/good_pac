@@ -72,7 +72,7 @@ public class Pacman extends BasicGameState {
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
 		pacman = new Image(Customize.colour);
-		if(container.getInput().isKeyDown(Input.KEY_RIGHT) && pacmanX < 468 && wallsLeft == false){
+		if(container.getInput().isKeyDown(Input.KEY_RIGHT) && pacmanX < 482 && wallsLeft == false){
 			pacmanX += 1;
 		}
 		if(container.getInput().isKeyDown(Input.KEY_LEFT) && pacmanX > 0 && wallsRight == false){
@@ -108,12 +108,12 @@ public class Pacman extends BasicGameState {
 	    Rectangle box3Left2 = new Rectangle(149, 239, 1, 41);
 	    Rectangle box3Left3 = new Rectangle(215, 285, 1, 87);
 	    Rectangle box3Bottom1 = new Rectangle(149, 285, 60, 1);
-	    Rectangle box3Bottom2 = new Rectangle(215, 372, 66, 1);
+	    Rectangle box3Bottom2 = new Rectangle(219, 372, 55, 1);
 	    Rectangle box3Bottom3 = new Rectangle(275, 285, 70, 1);
-	    Rectangle box4Top = new Rectangle(409, 190, 39, 1);
+	    Rectangle box4Top = new Rectangle(409, 190, 58, 1);
 	    Rectangle box4Left = new Rectangle(409, 190, 1, 227);
-	    Rectangle box4Right = new Rectangle(468, 210, 1, 207);
-	    Rectangle box4Bottom = new Rectangle(429, 417, 39, 1);
+	    Rectangle box4Right = new Rectangle(468, 200, 1, 217);
+	    Rectangle box4Bottom = new Rectangle(412, 417, 56, 1);
 	    
 		if(p.intersects(g1) || p.intersects(g2) || p.intersects(g3) || p.intersects(g4)) {
 			pacmanLives-=1;

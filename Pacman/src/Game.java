@@ -20,6 +20,8 @@ public class Game extends StateBasedGame{
 
 	public static void main(String argv[]) {
 		Scanner in = new Scanner(System.in);
+		System.out.println("Please enter your name");
+		Score.name = in.nextLine();
 		System.out.println("What fps do you want?");
 		int x = in.nextInt();
 		try {
@@ -44,6 +46,7 @@ public class Game extends StateBasedGame{
 		addState(new Pacman());
 		addState(new GameOver());
 		addState(new Customize());
+		addState(new HighScore());
 	}
 	
 	
