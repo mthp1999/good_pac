@@ -5,7 +5,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 
-public class timer extends BasicGameState{
+public class Timer extends BasicGameState{
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
