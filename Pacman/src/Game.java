@@ -24,6 +24,7 @@ public class Game extends StateBasedGame{
 		//System.out.println("Please enter your name");
 		//Score.name = in.nextLine();
 		System.out.println("What fps do you want?");
+		System.out.println("This decides the speed of pacman, (1 is slower, 600 is faster)");
 		int x = in.nextInt();
 		try {
 			AppGameContainer pacman = new AppGameContainer(new Game("Pacman"));

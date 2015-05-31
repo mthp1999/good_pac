@@ -6,25 +6,33 @@ import org.newdawn.slick.SlickException;
 
 public class Food{
 
-	
-	public static int[] foodY = new int [201];
+	public static int[] foodX = new int [15];
+	public static int[] foodY = new int [15];
 	public static Image[] food = new Image[15];
-	
 	public static Random r = new Random();
-	
-	public static void main (String[] args) throws SlickException {
-	
-		foodY[201] = r.nextInt(501);
+	public static void foodClassss () {
 		
+		
+
 		for (int x = 0; x <15; x++){
+
 			foodX[x] = r.nextInt(501);
 			foodY[x] = r.nextInt(501);
-			System.out.println(foodX[x]);
+			System.out.println(foodY[x]);
 		}
-		/*for (int c = 0; c < 15; c++){
-			food[c] = new Image("img/foodBall.png");
+		
+		for (int x = 0; x < 15; x++){
+			try {
+				food[x] = new Image("img/foodBall.png");
+			} catch (SlickException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		food[0] = new Image("img/foodBall.png");
-	*/}
+	}
+	public static void foodRefresh(int x){
+		foodX[x] = r.nextInt(501);
+		foodY[x] = r.nextInt(501);
+	}
 
 }

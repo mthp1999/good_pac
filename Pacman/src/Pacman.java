@@ -52,9 +52,10 @@ public class Pacman extends BasicGameState {
 		wallsRight = false;
 		wallsTop = false;
 		wallsBottom = false;
-		food[0] = new Image("img/foodBall.png");
+		Food.foodClassss();
+		/*food[0] = new Image("img/foodBall.png");
 		foodX[1] = r.nextInt(501);
-		foodY[1] = r.nextInt(501);
+		foodY[1] = r.nextInt(501);*/
 		
 	}
 
@@ -78,8 +79,27 @@ public class Pacman extends BasicGameState {
 		g.drawImage(ghost2, ghost2X, ghost2Y);
 		g.drawImage(ghost3, ghost3X, ghost3Y);
 		g.drawImage(ghost4, ghost4X, ghost4Y);
-		g.drawImage(food[0], /*r.nextInt(501)*/foodX[1], foodY[1]);
 		g.drawRect(60, 61, 96, 89);
+		g.drawRect(0, 290, 42, 303);
+		g.drawRect(42, 475, 162, 37);
+		g.drawRect(235, 144, 40, 228);
+		g.drawRect(169, 244, 176, 41);
+		g.drawRect(429, 210, 39, 207);
+		g.drawImage(Food.food[0], Food.foodX[0], Food.foodY[0]);
+		g.drawImage(Food.food[1], Food.foodX[1], Food.foodY[1]);
+		g.drawImage(Food.food[2], Food.foodX[2], Food.foodY[2]);
+		g.drawImage(Food.food[3], Food.foodX[3], Food.foodY[3]);
+		g.drawImage(Food.food[4], Food.foodX[4], Food.foodY[4]);
+		g.drawImage(Food.food[5], Food.foodX[5], Food.foodY[5]);
+		g.drawImage(Food.food[6], Food.foodX[6], Food.foodY[6]);
+		g.drawImage(Food.food[7], Food.foodX[7], Food.foodY[7]);
+		g.drawImage(Food.food[8], Food.foodX[8], Food.foodY[8]);
+		g.drawImage(Food.food[9], Food.foodX[9], Food.foodY[9]);
+		g.drawImage(Food.food[10], Food.foodX[10], Food.foodY[10]);
+		g.drawImage(Food.food[11], Food.foodX[11], Food.foodY[11]);
+		g.drawImage(Food.food[12], Food.foodX[12], Food.foodY[12]);
+		g.drawImage(Food.food[13], Food.foodX[13], Food.foodY[13]);
+		g.drawImage(Food.food[14], Food.foodX[14], Food.foodY[14]);
 		g.setColor(Color.white);
 		g.drawString(score, 450, 490);
 	}
@@ -107,7 +127,21 @@ public class Pacman extends BasicGameState {
 	    Rectangle g2 = new Rectangle(ghost2X,ghost2Y, 14, 14);
 	    Rectangle g3 = new Rectangle(ghost3X,ghost3Y, 14, 14);
 	    Rectangle g4 = new Rectangle(ghost4X,ghost4Y, 14, 14);
-	    Rectangle food1 = new Rectangle(foodX[0], foodY[0], 8, 8);
+	    Rectangle food1 = new Rectangle(Food.foodX[0], Food.foodY[0], 8, 8);
+	    Rectangle food2 = new Rectangle(Food.foodX[1], Food.foodY[1], 8, 8);
+	    Rectangle food3 = new Rectangle(Food.foodX[2], Food.foodY[2], 8, 8);
+	    Rectangle food4 = new Rectangle(Food.foodX[3], Food.foodY[3], 8, 8);
+	    Rectangle food5 = new Rectangle(Food.foodX[4], Food.foodY[4], 8, 8);
+	    Rectangle food6 = new Rectangle(Food.foodX[5], Food.foodY[5], 8, 8);
+	    Rectangle food7 = new Rectangle(Food.foodX[6], Food.foodY[6], 8, 8);
+	    Rectangle food8 = new Rectangle(Food.foodX[7], Food.foodY[7], 8, 8);
+	    Rectangle food9 = new Rectangle(Food.foodX[8], Food.foodY[8], 8, 8);
+	    Rectangle food10 = new Rectangle(Food.foodX[9], Food.foodY[9], 8, 8);
+	    Rectangle food11 = new Rectangle(Food.foodX[10], Food.foodY[10], 8, 8);
+	    Rectangle food12 = new Rectangle(Food.foodX[11], Food.foodY[11], 8, 8);
+	    Rectangle food13 = new Rectangle(Food.foodX[12], Food.foodY[12], 8, 8);
+	    Rectangle food14 = new Rectangle(Food.foodX[13], Food.foodY[13], 8, 8);
+	    Rectangle food15 = new Rectangle(Food.foodX[14], Food.foodY[14], 8, 8);
 	    
 		if(p.intersects(g1) || p.intersects(g2) || p.intersects(g3) || p.intersects(g4)) {//checking hitboxes for ghost to pacman, if they touch - removea lifeand set back to start
 			pacmanX = 240;
@@ -121,8 +155,65 @@ public class Pacman extends BasicGameState {
 		}
 		if(p.intersects(food1)){
 			numScore += 100;
-			
+			Food.foodRefresh(0);
 		}
+		if(p.intersects(food2)){
+			numScore += 100;
+			Food.foodRefresh(1);
+		}
+		if(p.intersects(food3)){
+			numScore += 100;
+			Food.foodRefresh(2);
+		}
+		if(p.intersects(food4)){
+			numScore += 100;
+			Food.foodRefresh(3);
+		}
+		if(p.intersects(food5)){
+			numScore += 100;
+			Food.foodRefresh(4);
+		}
+		if(p.intersects(food6)){
+			numScore += 100;
+			Food.foodRefresh(5);
+		}
+		if(p.intersects(food7)){
+			numScore += 100;
+			Food.foodRefresh(6);
+		}
+		if(p.intersects(food8)){
+			numScore += 100;
+			Food.foodRefresh(7);
+		}
+		if(p.intersects(food9)){
+			numScore += 100;
+			Food.foodRefresh(8);
+		}
+		if(p.intersects(food10)){
+			numScore += 100;
+			Food.foodRefresh(9);
+		}
+		if(p.intersects(food11)){
+			numScore += 100;
+			Food.foodRefresh(10);
+		}
+		if(p.intersects(food12)){
+			numScore += 100;
+			Food.foodRefresh(11);
+		}
+		if(p.intersects(food13)){
+			numScore += 100;
+			Food.foodRefresh(12);
+		}
+		if(p.intersects(food14)){
+			numScore += 100;
+			Food.foodRefresh(13);
+		}
+		if(p.intersects(food15)){
+			numScore += 100;
+			Food.foodRefresh(14);
+		}
+		
 		if(p.intersects(rectangles.box1Left) || p.intersects(rectangles.box3Left1) || p.intersects(rectangles.box3Left2) || p.intersects(rectangles.box3Left3) || p.intersects(rectangles.box4Left)) {
 			wallsLeft = true;
 		} else {
@@ -148,11 +239,20 @@ public class Pacman extends BasicGameState {
 		
 	}
 	
-	public static int[] foodX(){
-		return null;
+	/*public static int[] foodXorY(int[] array) throws SlickException{
+		
+		int[] arrays = new int[15];
+		
+		for(int x = 0; x < 15; x++){
+			
+			
+			return arrays[x];
+		}
 		
 		
-	}
+		
+
+	}*/
 	
 
 	@Override
