@@ -79,12 +79,12 @@ public class Pacman extends BasicGameState {
 		g.drawImage(ghost2, ghost2X, ghost2Y);
 		g.drawImage(ghost3, ghost3X, ghost3Y);
 		g.drawImage(ghost4, ghost4X, ghost4Y);
-		g.drawRect(60, 61, 96, 89);
-		g.drawRect(0, 290, 42, 303);
-		g.drawRect(42, 475, 162, 37);
-		g.drawRect(235, 144, 40, 228);
-		g.drawRect(169, 244, 176, 41);
-		g.drawRect(429, 210, 39, 207);
+		g.fillRect(60, 61, 96, 89);
+		g.fillRect(0, 290, 42, 303);
+		g.fillRect(42, 475, 162, 37);
+		g.fillRect(235, 144, 40, 228);
+		g.fillRect(169, 244, 176, 41);
+		g.fillRect(429, 210, 39, 207);
 		g.drawImage(Food.food[0], Food.foodX[0], Food.foodY[0]);
 		g.drawImage(Food.food[1], Food.foodX[1], Food.foodY[1]);
 		g.drawImage(Food.food[2], Food.foodX[2], Food.foodY[2]);
