@@ -1,4 +1,5 @@
 /img/
+<<<<<<< HEAD
 /Timer.class
 /rectangles.class
 /About.class
@@ -12,3 +13,6 @@
 /Pacman.class
 /Score.class
 /StartMenu.class
+=======
+/Ghosts.class
+>>>>>>> origin/master
