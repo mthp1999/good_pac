@@ -58,7 +58,6 @@ public class Game extends StateBasedGame{
 		addState(new Pacman());
 		addState(new GameOver());
 		addState(new Customize());
-		addState(new HighScore());
 		addState(new DeathTimer());
 	}
 	
