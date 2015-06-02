@@ -1,5 +1,7 @@
 
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
@@ -12,6 +14,7 @@ public class Game extends StateBasedGame{
 	
 	public static TrueTypeFont f1;
 	public static Object[] scoreList;
+	public static Timer timer = new Timer();
 
 	public Game(String name) {
 		super(name);
@@ -37,6 +40,13 @@ public class Game extends StateBasedGame{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		timer.schedule( new TimerTask() {
+		    public void run() {
+		       Food.foodRefresh(1);
+		       System.out.println("Works");
+		    }
+		 }, 0, 5*1000);
+		
 		
 	}
 
@@ -49,7 +59,7 @@ public class Game extends StateBasedGame{
 		addState(new GameOver());
 		addState(new Customize());
 		addState(new HighScore());
-		addState(new Timer());
+		addState(new DeathTimer());
 	}
 	
 	

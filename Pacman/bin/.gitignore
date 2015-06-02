@@ -5,7 +5,6 @@
 /Food.class
 /Game.class
 /GameOver.class
-/Ghost1.class
 /HighScore.class
 /Map.class
 /Pacman.class
@@ -13,3 +12,5 @@
 /StartMenu.class
 /Timer.class
 /rectangles.class
+/DeathTimer.class
+/Game$1.class

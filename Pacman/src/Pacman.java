@@ -23,6 +23,7 @@ public class Pacman extends BasicGameState {
 	int pacmanX, pacmanY, pacmanLives, ghostX, ghostY;
 	boolean wallsLeft, wallsRight, wallsTop, wallsBottom, ghostWallsLeft, ghostWallsRight, ghostWallsTop, ghostWallsBottom;
 	Random r = new Random();
+	
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
