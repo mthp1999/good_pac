@@ -20,7 +20,7 @@ public class DeathTimer extends BasicGameState{
 		try {
 		    Thread.sleep(3000);                 //3000 milliseconds is three seconds.
 		} catch(InterruptedException ex) {
-		    Thread.currentThread().interrupt();
+		    Thread.currentThread().interrupt(); //once you die, there is a 3 second wait before the characters respawn
 		}
 		game.enterState(3);
 		

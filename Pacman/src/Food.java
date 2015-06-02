@@ -21,15 +21,19 @@ public class Food{
 			System.out.println(foodY[x]);
 		}
 		
-		for (int x = 0; x < 15; x++){
+		for (int x = 0; x < 15; x++){ //places a food ball once random coordinates have been generated
 			try {
 				food[x] = new Image("img/foodBall.png");
 			} catch (SlickException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
+	/**
+	 * method to set a random place for the food in the map
+	 * @param x number of times a new location needs to be created for 15 food pieces to spawn in different places
+	 * return None
+	 */
 	public static void foodRefresh(int x){
 		foodX[x] = r.nextInt(501);
 		foodY[x] = r.nextInt(501);

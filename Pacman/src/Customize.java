@@ -9,13 +9,13 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Customize extends BasicGameState{
 
 	public static String colour = "img/Pacman.png";
-	Button green, purple, orange, yellow;
+	Button green, purple, orange, yellow; //customization options
 	
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		green = new Button("img/GreenPacman");
+		
+		green = new Button("img/GreenPacman");//initializes a button to the picture, using the button class to get it to work
 		purple = new Button("img/PurplePacman");
 		orange = new Button("img/OrangePacman");
 		yellow = new Button("img/YellowPacman");
@@ -25,8 +25,8 @@ public class Customize extends BasicGameState{
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		green.draw(g, 125, 100);
+		
+		green.draw(g, 125, 100); //renders each of the buttons for different colours
 		purple.draw(g,  125, 200);
 		orange.draw(g, 125, 300);
 		yellow.draw(g, 125, 400);
@@ -35,11 +35,11 @@ public class Customize extends BasicGameState{
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		if(yellow.update(container.getInput())) {
+		
+		if(yellow.update(container.getInput())) {//button class starts working once mouse is over the buttons
 			colour = "img/Pacman.png";
 			try {
-			    Thread.sleep(100);                 
+			    Thread.sleep(100);                 //wait function used to prevent bug from causing it to go to the about section
 			} catch(InterruptedException ex) {
 			    Thread.currentThread().interrupt();
 			}
@@ -76,8 +76,8 @@ public class Customize extends BasicGameState{
 
 	@Override
 	public int getID() {
-		// TODO Auto-generated method stub
-		return 5;
+		
+		return 5;//id for the class
 	}
 
 }

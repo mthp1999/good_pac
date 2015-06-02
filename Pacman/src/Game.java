@@ -23,17 +23,15 @@ public class Game extends StateBasedGame{
 	@SuppressWarnings("resource")
 	public static void main(String argv[]) {
 		Scanner in = new Scanner(System.in);
-		//System.out.println("Please enter your name");
-		//Score.name = in.nextLine();
 		System.out.println("What fps do you want?");
-		System.out.println("This decides the speed of pacman, (1 is slower, 600 is faster)");
-		int x = in.nextInt();
+		System.out.println("This decides the speed of pacman, (2 is slower, 600 is faster)");
+		int x = in.nextInt(); //x is to get user input for fps
 		try {
 			AppGameContainer pacman = new AppGameContainer(new Game("Pacman"));
-			pacman.setDisplayMode(512, 512, false);
-			pacman.setTargetFrameRate(x - 1);
-			pacman.setClearEachFrame(true);
-			pacman.start();
+			pacman.setDisplayMode(512, 512, false); // sets the size of the window
+			pacman.setTargetFrameRate(x - 1); // sets the fps
+			pacman.setClearEachFrame(true); //clears the screen at the beginning of each frame
+			pacman.start(); //starts the game
 			
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
@@ -46,7 +44,7 @@ public class Game extends StateBasedGame{
 
 	@Override
 	public void initStatesList(GameContainer container) throws SlickException {
-		addState(new StartMenu());
+		addState(new StartMenu()); // each of these states are initialized
 		addState(new Map());
 		addState(new About());
 		addState(new Pacman());

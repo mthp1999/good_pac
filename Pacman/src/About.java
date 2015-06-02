@@ -12,33 +12,36 @@ public class About extends BasicGameState {
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
-		// TODO Auto-generated method stub
+		
 		back = new Button("img/Back");
 	}
 
 	@Override
+	/**
+	 * Method to show the about in the menu
+	 */
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
 		g.drawString("Created by Matthew and Masum ©2015 \nCredits to Shimmy568", 0, 470);
-		g.drawString("Welcome to Man-Pac! \n\nTo play, click *Back* and click *Start* \n\nThe main objective of this game is to \navoid the ghosts and collect the white dots\n\nTo move, use the arrow keys \n\nOnce you die, you have to wait 3 seconds \nbefore you can respawn", 75, 150);
-		back.draw(g, 230, 10);
-		// TODO Auto-generated method stub
+		g.drawString("Welcome to Man-Pac! \n\nTo play, click *Back* and click *Start* \n\nThis is a two player game \n\nThe ghost is controlled by WASD and man-pac is \ncontrolled by the arrow keys \n\nThe ghost has to try and catch man-pac \nwhile man-pac tries to escape and \ncollect the yellow dots\n\nOnce a character dies, both will have to wait \n3 seconds before they can respawn", 25, 100);
+		back.draw(g, 230, 10);//coordinates for the back button
+		
 		
 	}
 
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		if(back.update(container.getInput())) {
+		
+		if(back.update(container.getInput())) {// if back is pressed, this allows it to go back to main menu 
 			game.enterState(0);
 		}
 	}
 
 	@Override
 	public int getID() {
-		// TODO Auto-generated method stub
-		return 2;
+		
+		return 2; //id for the class
 	}
 
 }
