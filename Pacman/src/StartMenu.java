@@ -52,6 +52,7 @@ public class StartMenu extends BasicGameState {
 			throws SlickException {	
 		
 		if(startUnpressed.update(container.getInput())) {
+			Pacman.numScore = 0;
 			game.enterState(3);
 		}
 		if(customize.update(container.getInput())) {

@@ -18,7 +18,7 @@ public class Pacman extends BasicGameState {
 	Image[] food = new Image[15];
 	int[] foodX = new int [15];
 	int[] foodY = new int [15];
-	int numScore = 0;
+	public static int numScore = 0;
 	String score = "Score";
 	int pacmanX, pacmanY, pacmanLives, ghostX, ghostY;
 	boolean wallsLeft, wallsRight, wallsTop, wallsBottom, ghostWallsLeft, ghostWallsRight, ghostWallsTop, ghostWallsBottom;
