@@ -1,5 +1,6 @@
 
 import java.util.Random;
+import java.util.TimerTask;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -135,6 +136,21 @@ public class Pacman extends BasicGameState {
 			pacmanLives-=1;
 			ghostX = 200;
 			ghostY = 200;
+			Food.foodRefresh(0);
+			Food.foodRefresh(1);
+			Food.foodRefresh(2);
+			Food.foodRefresh(3);
+			Food.foodRefresh(4);
+			Food.foodRefresh(5);
+			Food.foodRefresh(6);
+			Food.foodRefresh(7);
+			Food.foodRefresh(8);
+			Food.foodRefresh(9);
+			Food.foodRefresh(10);
+			Food.foodRefresh(11);
+			Food.foodRefresh(12);
+			Food.foodRefresh(13);
+			Food.foodRefresh(14);
 			game.enterState(7);
 		}
 		if(pacmanLives ==  0) {
@@ -255,6 +271,7 @@ public class Pacman extends BasicGameState {
 		} else {
 			ghostWallsBottom = false;
 		}
+		
 	}
 	
 
