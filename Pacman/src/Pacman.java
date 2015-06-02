@@ -235,13 +235,13 @@ public class Pacman extends BasicGameState {
 		if(ghost1X < 482 && wallsLeft == false){
 			ghost1X += 1;
 		}
-		if(ghost1X > 0 && wallsRight == false){
+		else if(ghost1X > 0 && wallsRight == false){
 			ghost1X -= 1;
 		}
-		if(ghost1Y > 0 && wallsBottom == false){
+		else if(ghost1Y > 0 && wallsBottom == false){
 			ghost1Y -= 1;
 		}
-		if(ghost1Y < 483 && wallsTop == false){
+		else if(ghost1Y < 483 && wallsTop == false){
 			ghost1Y += 1;
 		}
 
@@ -249,13 +249,13 @@ public class Pacman extends BasicGameState {
 		if(ghost2X < 482 && wallsLeft == false){
 			ghost2X += 1;
 		}
-		if(ghost2X > 0 && wallsRight == false){
+		else if(ghost2X > 0 && wallsRight == false){
 			ghost2X -= 1;
 		}
-		if(ghost2Y > 0 && wallsBottom == false){
+		else if(ghost2Y > 0 && wallsBottom == false){
 			ghost2Y -= 1;
 		}
-		if(ghost2Y < 483 && wallsTop == false){
+		else if(ghost2Y < 483 && wallsTop == false){
 			ghost2Y += 1;
 		}
 		
@@ -291,14 +291,14 @@ public class Pacman extends BasicGameState {
 		
 		
 		
-		ghost1X+=1;
-		ghost1Y+=1;
-		ghost2X+=1;
-		ghost2Y+=1;
-		ghost3X+=1;
-		ghost3Y+=1;
-		ghost4X+=1;
-		ghost4Y+=1;
+//		ghost1X+=1;
+//		ghost1Y+=1;
+//		ghost2X+=1;
+//		ghost2Y+=1;
+//		ghost3X+=1;
+//		ghost3Y+=1;
+//		ghost4X+=1;
+//		ghost4Y+=1;
 	}
 	
 
