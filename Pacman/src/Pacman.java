@@ -15,32 +15,32 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Pacman extends BasicGameState {
 	
-	Image pacman, life1, life2, life3, ghost, i;
-	Image[] food = new Image[15];
-	int[] foodX = new int [15];
-	int[] foodY = new int [15];
+	Image pacman, life1, life2, life3, ghost, i; //images initialized
+	Image[] food = new Image[15]; 
+	int[] foodX = new int [15];//food x coordinate
+	int[] foodY = new int [15];//food y coordinate
 	public static int numScore = 0;
-	String score = "Score";
+	String score = "Score";//scores initialized
 	int pacmanX, pacmanY, pacmanLives, ghostX, ghostY;
-	boolean wallsLeft, wallsRight, wallsTop, wallsBottom, ghostWallsLeft, ghostWallsRight, ghostWallsTop, ghostWallsBottom;
-	Random r = new Random();
+	boolean wallsLeft, wallsRight, wallsTop, wallsBottom, ghostWallsLeft, ghostWallsRight, ghostWallsTop, ghostWallsBottom; //walls initialized to prevent characters from leaving the map
+	Random r = new Random(); //random class to generate location for food
 	
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		pacmanX = 240;
+		
+		pacmanX = 240;//starting coordinates
 		pacmanY = 385;
-		pacmanLives = 3;
-		life1 = new Image("img/Pacman_Small.png");
+		pacmanLives = 3; //amount of lives initialized
+		life1 = new Image("img/Pacman_Small.png");//picture initialized for each life
 		life2 = new Image("img/Pacman_Small.png");
 		life3 = new Image("img/Pacman_Small.png");
 		i = new Image("img/New Map.png");
 		ghost = new Image("img/ghostRed.png");
 		ghostX = 200;
-		ghostY = 200;
-		wallsLeft = false;
+		ghostY = 200;//ghost starting coordinated
+		wallsLeft = false;//wall booleans set to false to start with
 		wallsRight = false;
 		wallsTop = false;
 		wallsBottom = false;
@@ -48,14 +48,14 @@ public class Pacman extends BasicGameState {
 		ghostWallsTop = false;
 		ghostWallsLeft = false;
 		ghostWallsRight = false;
-		Food.foodClassss();
+		Food.foodClassss();//food initialized
 		
 	}
 
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
-		// TODO Auto-generated method stub
+		
 		
 		g.drawImage(i, 0, 0);
 		g.drawImage(pacman, pacmanX, pacmanY);
@@ -70,7 +70,7 @@ public class Pacman extends BasicGameState {
 		}
 		g.drawImage(ghost, ghostX, ghostY);
 		g.drawImage(Food.food[0], Food.foodX[0], Food.foodY[0]);
-		g.drawImage(Food.food[1], Food.foodX[1], Food.foodY[1]);
+		g.drawImage(Food.food[1], Food.foodX[1], Food.foodY[1]);//the food balls are drawn
 		g.drawImage(Food.food[2], Food.foodX[2], Food.foodY[2]);
 		g.drawImage(Food.food[3], Food.foodX[3], Food.foodY[3]);
 		g.drawImage(Food.food[4], Food.foodX[4], Food.foodY[4]);
@@ -101,7 +101,7 @@ public class Pacman extends BasicGameState {
 		if(container.getInput().isKeyDown(Input.KEY_RIGHT) && pacmanX < 482 && wallsLeft == false){
 			pacmanX += 1;
 		}
-		if(container.getInput().isKeyDown(Input.KEY_LEFT) && pacmanX > 0 && wallsRight == false){
+		if(container.getInput().isKeyDown(Input.KEY_LEFT) && pacmanX > 0 && wallsRight == false){ //allows for user input to move and prevents from going out of the map
 			pacmanX -= 1;
 		}
 		if(container.getInput().isKeyDown(Input.KEY_UP) && pacmanY > 0 && wallsBottom == false){
@@ -114,7 +114,7 @@ public class Pacman extends BasicGameState {
 		score = new Integer(numScore).toString();
 		Rectangle p = new Rectangle(pacmanX, pacmanY, 30, 32);//Adding hitboxes to pacman and the 4 ghosts
 		Rectangle g1 = new Rectangle(ghostX, ghostY, 14, 14);
-	    Rectangle food1 = new Rectangle(Food.foodX[0], Food.foodY[0], 8, 8);
+	    Rectangle food1 = new Rectangle(Food.foodX[0], Food.foodY[0], 8, 8);//15 pieces of food are created and initialized
 	    Rectangle food2 = new Rectangle(Food.foodX[1], Food.foodY[1], 8, 8);
 	    Rectangle food3 = new Rectangle(Food.foodX[2], Food.foodY[2], 8, 8);
 	    Rectangle food4 = new Rectangle(Food.foodX[3], Food.foodY[3], 8, 8);
@@ -136,7 +136,7 @@ public class Pacman extends BasicGameState {
 			pacmanLives-=1;
 			ghostX = 200;
 			ghostY = 200;
-			Food.foodRefresh(0);
+			Food.foodRefresh(0); //when the characters are respawning, the food location refreshes
 			Food.foodRefresh(1);
 			Food.foodRefresh(2);
 			Food.foodRefresh(3);
@@ -157,7 +157,7 @@ public class Pacman extends BasicGameState {
 			pacmanLives = 3;
 			game.enterState(6);
 		}
-		if(p.intersects(food1)){
+		if(p.intersects(food1)){ //every timw a food ball is touched, it refreshes to go to a new location
 			numScore += 100;
 			Food.foodRefresh(0);
 		}
@@ -221,7 +221,7 @@ public class Pacman extends BasicGameState {
 		if(p.intersects(rectangles.box1Left) || p.intersects(rectangles.box3Left1) || p.intersects(rectangles.box3Left2) || p.intersects(rectangles.box3Left3) || p.intersects(rectangles.box4Left)) {
 			wallsLeft = true;
 		} else {
-			wallsLeft = false;
+			wallsLeft = false; //prevents from hitting the box
 		}
 		if(p.intersects(rectangles.box1Right) || p.intersects(rectangles.box2Right1) || p.intersects(rectangles.box2Right2) || p.intersects(rectangles.box3Right1) || p.intersects(rectangles.box3Right2) || p.intersects(rectangles.box3Right3) || p.intersects(rectangles.box4Right)) {
 			wallsRight = true;
@@ -240,7 +240,7 @@ public class Pacman extends BasicGameState {
 		}
 		
 		if(container.getInput().isKeyDown(Input.KEY_D) && ghostX < 482 && ghostWallsLeft == false){
-			ghostX += 1;
+			ghostX += 1; //user input for the ghost
 		}
 		if(container.getInput().isKeyDown(Input.KEY_A) && ghostX > 0 && ghostWallsRight == false){
 			ghostX -= 1;
@@ -259,7 +259,7 @@ public class Pacman extends BasicGameState {
 		if(g1.intersects(rectangles.box1Right) || g1.intersects(rectangles.box2Right1) || g1.intersects(rectangles.box2Right2) || g1.intersects(rectangles.box3Right1) || g1.intersects(rectangles.box3Right2) || g1.intersects(rectangles.box3Right3) || g1.intersects(rectangles.box4Right)) {
 			ghostWallsRight = true;
 		} else {
-			ghostWallsRight = false;
+			ghostWallsRight = false; //prevents the ghost from going past the boxes
 		}
 		if(g1.intersects(rectangles.box1Top) || g1.intersects(rectangles.box2Top1) || g1.intersects(rectangles.box2Top2) || g1.intersects(rectangles.box3Top1) || g1.intersects(rectangles.box3Top2) || g1.intersects(rectangles.box3Top3) || g1.intersects(rectangles.box4Top)) {
 			ghostWallsTop = true;
@@ -279,8 +279,8 @@ public class Pacman extends BasicGameState {
 
 	@Override
 	public int getID() {
-		// TODO Auto-generated method stub
-		return 3;
+		
+		return 3;//class id
 	}
 	
 }

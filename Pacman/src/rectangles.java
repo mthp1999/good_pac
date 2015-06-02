@@ -3,8 +3,8 @@ import org.newdawn.slick.geom.Rectangle;
 
 public class rectangles{
 	
-	public static Rectangle box1Left = new Rectangle(63, 45, 1, 105);
-	public static Rectangle box1Right = new Rectangle(155, 45, 1, 105);
+	public static Rectangle box1Left = new Rectangle(63, 45, 1, 105);//rectangles prevent characters from entering the boxes
+	public static Rectangle box1Right = new Rectangle(155, 45, 1, 105); 
 	public static Rectangle box1Top = new Rectangle(43, 60, 110, 1);
 	public static Rectangle box1Bottom = new Rectangle(45, 150, 110, 1);
 	public static Rectangle box2Top1 = new Rectangle(0, 290, 42, 1);
