@@ -23,10 +23,10 @@ public class rectangles{
 	public static Rectangle box3Bottom1 = new Rectangle(149, 285, 60, 1);
 	public static Rectangle box3Bottom2 = new Rectangle(219, 372, 55, 1);
 	public static Rectangle box3Bottom3 = new Rectangle(275, 285, 70, 1);
-	public static Rectangle box4Top = new Rectangle(434, 210, 41, 1);
-	public static Rectangle box4Left = new Rectangle(434, 210, 1, 224);
-	public static Rectangle box4Right = new Rectangle(468, 193, 1, 224);
-	public static Rectangle box4Bottom = new Rectangle(412, 417, 56, 1);
+	public static Rectangle box4Top = new Rectangle(434, 211, 34, 1);
+	public static Rectangle box4Left = new Rectangle(429, 211, 1, 210);
+	public static Rectangle box4Right = new Rectangle(468, 211, 1, 210);
+	public static Rectangle box4Bottom = new Rectangle(434, 417, 34, 1);
 	
 
 }
