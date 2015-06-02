@@ -36,12 +36,7 @@ public class StartMenu extends BasicGameState {
 		g.drawImage(title, 0, 10);
 		startUnpressed.draw(g, 119, 175);
 		customize.draw(g, 119, 250);
-		about.draw(g, 119, 325);
-//		g.draw(startUnpressed, 119, 175);
-//		g.drawe(customize, 119, 250);
-//		g.drawImage(highScore, 119, 325);
-//		g.drawImage(about, 119, 400);
-//		
+		about.draw(g, 119, 325);	
 		
 	}
 

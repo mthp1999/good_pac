@@ -15,29 +15,29 @@ public class Map extends BasicGameState{
 	@Override
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		i = new Image("img/New Map.png");
+		
+		i = new Image("img/New Map.png"); //map image is initialized
 	}
 
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		g.drawImage(i, 10, 10);
+		
+		g.drawImage(i, 10, 10); //map is placed on the window
 		
 	}
 
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
-		// TODO Auto-generated method stub
+		//there is nothing to update
 		
 	}
 
 	@Override
 	public int getID() {
-		// TODO Auto-generated method stub
-		return 1;
+		
+		return 1; //class id
 	}
 	
 

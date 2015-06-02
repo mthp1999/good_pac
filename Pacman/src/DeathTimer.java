@@ -27,6 +27,7 @@ public class DeathTimer extends BasicGameState{
 	}
 
 	@Override
+	
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
 		
