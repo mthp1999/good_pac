@@ -14,26 +14,25 @@ public class StartMenu extends BasicGameState {
 	Button startUnpressed, customize, about;
 	
 	Image title;
-	//public static Button startUnpressed, customize, about, highScore;
 	
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1)
 			throws SlickException {
-		// TODO Auto-generated method stub
 		
-		startUnpressed = new Button("img/Start");
+		
+		startUnpressed = new Button("img/Start"); //images and buttons are initialized
 		title = new Image("img/Title.png");
 		customize = new Button("img/Customize");
 		about = new Button("img/About");
-		Game.f1 = new TrueTypeFont(new Font("NewTimesRoman", 0 , 30), false);
+		Game.f1 = new TrueTypeFont(new Font("NewTimesRoman", 0 , 30), false); //font is set for the game
 		
 	}
 
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		g.drawImage(title, 0, 10);
+		
+		g.drawImage(title, 0, 10); //buttons and pictures are rendered
 		startUnpressed.draw(g, 119, 175);
 		customize.draw(g, 119, 250);
 		about.draw(g, 119, 325);	
@@ -45,10 +44,10 @@ public class StartMenu extends BasicGameState {
 			throws SlickException {	
 		
 		if(startUnpressed.update(container.getInput())) {
-			Pacman.numScore = 0;
+			Pacman.numScore = 0; //score set to 0 to begin with
 			game.enterState(3);
 		}
-		if(customize.update(container.getInput())) {
+		if(customize.update(container.getInput())) {//states are set according to button
 			game.enterState(5);
 		}
 		if(about.update(container.getInput())) {
@@ -58,8 +57,8 @@ public class StartMenu extends BasicGameState {
 
 	@Override
 	public int getID() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return 0; //class id
 	}
 
 }
