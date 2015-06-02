@@ -291,8 +291,9 @@ public class Pacman extends BasicGameState {
 		
 		
 		
-//		ghost1X+=1;
-//		ghost1Y+=1;
+		ghost1X+=1;
+		ghost1Y+=1;
+		
 //		ghost2X+=1;
 //		ghost2Y+=1;
 //		ghost3X+=1;
