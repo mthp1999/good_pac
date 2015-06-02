@@ -8,14 +8,14 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class GameOver extends BasicGameState{
 
-	Image gameOver;
+	Image gameOver; //when you die three times, it goes to this page
 	Button retry, backToMenu;
 	
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		gameOver = new Image("img/Game Over.png");
+		
+		gameOver = new Image("img/Game Over.png");//images and buttons are initialized
 		retry = new Button("img/Retry");
 		backToMenu = new Button("img/BackToMenu");
 	}
@@ -23,8 +23,8 @@ public class GameOver extends BasicGameState{
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g)
 			throws SlickException {
-		// TODO Auto-generated method stub
-		g.drawImage(gameOver, 0, 0);
+		
+		g.drawImage(gameOver, 0, 0); //it says game over in an image and two buttons are also rendered
 		retry.draw(g, 5, 5);
 		backToMenu.draw(g, 5, 65);
 	}
@@ -32,9 +32,9 @@ public class GameOver extends BasicGameState{
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
-		// TODO Auto-generated method stub
+		
 		if(retry.update(container.getInput())) {
-			game.enterState(3);
+			game.enterState(3); //the state it enters when the button is clicked
 		}
 		if(backToMenu.update(container.getInput())) {
 			game.enterState(0);
@@ -43,8 +43,8 @@ public class GameOver extends BasicGameState{
 
 	@Override
 	public int getID() {
-		// TODO Auto-generated method stub
-		return 6;
+		
+		return 6;//class id
 	}
 
 }

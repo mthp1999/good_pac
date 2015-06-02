@@ -17,7 +17,7 @@ public class Game extends StateBasedGame{
 
 	public Game(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
+		// WE MADE ALL THE PICTURES... NOTHING FROM THE INTERNET WAS USED
 	}
 
 	@SuppressWarnings("resource")
