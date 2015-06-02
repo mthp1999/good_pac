@@ -19,7 +19,7 @@ public class Pacman extends BasicGameState {
 	int[] foodY = new int [15];
 	int numScore = 0;
 	String score = "Score";
-	int pacmanX, pacmanY, pacmanLives, ghost1X, ghost1Y, ghost2X, ghost2Y, ghost3X, ghost3Y, ghost4X, ghost4Y;
+	public static int pacmanX, pacmanY, pacmanLives, ghost1X, ghost1Y, ghost2X, ghost2Y, ghost3X, ghost3Y, ghost4X, ghost4Y;
 	boolean wallsLeft, wallsRight, wallsTop, wallsBottom;
 	Random r = new Random();
 
@@ -38,14 +38,14 @@ public class Pacman extends BasicGameState {
 		ghost2 = new Image("img/ghostLightBlue.png");
 		ghost3 = new Image("img/ghostPink.png");
 		ghost4 = new Image("img/ghostYellow.png");
-		ghost1X = 10;
-		ghost1Y = 10;
-		ghost2X = 20;
+		ghost1X = 200;
+		ghost1Y = 200;
+		ghost2X = 10;
 		ghost2Y = 20;
-		ghost3X = 30;
-		ghost3Y = 30;
-		ghost4X = 40;
-		ghost4Y = 40;
+		ghost3X = 10;
+		ghost3Y = 10;
+		ghost4X = 10;
+		ghost4Y = 10;
 		wallsLeft = false;
 		wallsRight = false;
 		wallsTop = false;
@@ -229,10 +229,13 @@ public class Pacman extends BasicGameState {
 		} else {
 			wallsBottom = false;
 		}
-
+		
+		
+		Ghost1.move();
+		
 				
 		
-		if(ghost1X < 482 && wallsLeft == false){
+		/*if(ghost1X < 482 && wallsLeft == false){
 			ghost1X += 1;
 		}
 		else if(ghost1X > 0 && wallsRight == false){
@@ -291,14 +294,14 @@ public class Pacman extends BasicGameState {
 		
 		
 		
-//		ghost1X+=1;
-//		ghost1Y+=1;
-//		ghost2X+=1;
-//		ghost2Y+=1;
-//		ghost3X+=1;
-//		ghost3Y+=1;
-//		ghost4X+=1;
-//		ghost4Y+=1;
+		ghost1X+=1;
+		ghost1Y+=1;
+		ghost2X+=1;
+		ghost2Y+=1;
+		ghost3X+=1;
+		ghost3Y+=1;
+		ghost4X+=1;
+		ghost4Y+=1;*/
 	}
 	
 
