@@ -11,7 +11,7 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class StartMenu extends BasicGameState {
 
-	Button startUnpressed, customize, about, highScore;
+	Button startUnpressed, customize, about;
 	
 	Image title;
 	//public static Button startUnpressed, customize, about, highScore;
@@ -25,7 +25,6 @@ public class StartMenu extends BasicGameState {
 		title = new Image("img/Title.png");
 		customize = new Button("img/Customize");
 		about = new Button("img/About");
-		highScore = new Button("img/High Scores");
 		Game.f1 = new TrueTypeFont(new Font("NewTimesRoman", 0 , 30), false);
 		
 	}
@@ -37,8 +36,7 @@ public class StartMenu extends BasicGameState {
 		g.drawImage(title, 0, 10);
 		startUnpressed.draw(g, 119, 175);
 		customize.draw(g, 119, 250);
-		highScore.draw(g, 119, 325);
-		about.draw(g, 119, 400);
+		about.draw(g, 119, 325);
 //		g.draw(startUnpressed, 119, 175);
 //		g.drawe(customize, 119, 250);
 //		g.drawImage(highScore, 119, 325);
@@ -57,9 +55,6 @@ public class StartMenu extends BasicGameState {
 		}
 		if(customize.update(container.getInput())) {
 			game.enterState(5);
-		}
-		if(highScore.update(container.getInput())) {
-			game.enterState(4);
 		}
 		if(about.update(container.getInput())) {
 			game.enterState(2);
