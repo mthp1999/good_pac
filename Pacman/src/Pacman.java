@@ -51,9 +51,6 @@ public class Pacman extends BasicGameState {
 		wallsTop = false;
 		wallsBottom = false;
 		Food.foodClassss();
-		/*food[0] = new Image("img/foodBall.png");
-		foodX[1] = r.nextInt(501);
-		foodY[1] = r.nextInt(501);*/
 		
 	}
 
@@ -233,23 +230,78 @@ public class Pacman extends BasicGameState {
 			wallsBottom = false;
 		}
 
-``
-	}
-	
-	/*public static int[] foodXorY(int[] array) throws SlickException{
+				
 		
-		int[] arrays = new int[15];
+		if(ghost1X < 482 && wallsLeft == false){
+			ghost1X += 1;
+		}
+		if(ghost1X > 0 && wallsRight == false){
+			ghost1X -= 1;
+		}
+		if(ghost1Y > 0 && wallsBottom == false){
+			ghost1Y -= 1;
+		}
+		if(ghost1Y < 483 && wallsTop == false){
+			ghost1Y += 1;
+		}
+
 		
-		for(int x = 0; x < 15; x++){
-			
-			
-			return arrays[x];
+		if(ghost2X < 482 && wallsLeft == false){
+			ghost2X += 1;
+		}
+		if(ghost2X > 0 && wallsRight == false){
+			ghost2X -= 1;
+		}
+		if(ghost2Y > 0 && wallsBottom == false){
+			ghost2Y -= 1;
+		}
+		if(ghost2Y < 483 && wallsTop == false){
+			ghost2Y += 1;
+		}
+		
+
+		
+		if(ghost3X < 482 && wallsLeft == false){
+			ghost3X += 1;
+		}
+		if(ghost3X > 0 && wallsRight == false){
+			ghost3X -= 1;
+		}
+		if(ghost3Y > 0 && wallsBottom == false){
+			ghost3Y -= 1;
+		}
+		if(ghost3Y < 483 && wallsTop == false){
+			ghost3Y += 1;
+		}
+		
+
+		
+		if(ghost4X < 482 && wallsLeft == false){
+			ghost4X += 1;
+		}
+		if(ghost4X > 0 && wallsRight == false){
+			ghost4X -= 1;
+		}
+		if(ghost4Y > 0 && wallsBottom == false){
+			ghost4Y -= 1;
+		}
+		if(ghost4Y < 483 && wallsTop == false){
+			ghost4Y += 1;
 		}
 		
 		
 		
+		ghost1X+=1;
+		ghost1Y+=1;
+		ghost2X+=1;
+		ghost2Y+=1;
+		ghost3X+=1;
+		ghost3Y+=1;
+		ghost4X+=1;
+		ghost4Y+=1;
+	}
+	
 
-	}*/
 	
 
 	@Override
